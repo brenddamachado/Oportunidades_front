@@ -38,7 +38,7 @@ function AddCard({ onAdd }) {
           <div className="modal-content">
             <span className="close-button" onClick={handleCloseModal}>&times;</span>
             <h2>Adicionar Nova Vaga</h2>
-            <form onSubmit={handleSubmit}>
+            <form className='form_add' onSubmit={handleSubmit}>
               <label>Tipo:</label>
               <input type="text" name="tipo" required />
 
