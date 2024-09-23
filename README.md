@@ -72,6 +72,7 @@ npm run dev
 
 ## Link do repositório com react e só com api
 **Part 1** https://github.com/brenddamachado/Oportunidades
+
 **Part 2** https://github.com/brenddamachado/Oportunidades_front
 
 ## Imagens do projeto
