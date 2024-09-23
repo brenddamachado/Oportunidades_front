@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './searchbar.css';
 function SearchBar({ tipoBusca, setTipoBusca, buscarVagasPorTipo }) {
   return (
     <div className="search-bar">
