@@ -84,7 +84,7 @@ npm run dev
 </p>
 
 ## About
-- Apresentação no LinkedIn:
+- Apresentação no LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7244062536612859904/
 
 ## Melhorias Futuras
 ° Persistência em Banco de Dados: Substituir o armazenamento em memória por um banco de dados relacional (MySQL, PostgreSQL) ou não-relacional (MongoDB).
