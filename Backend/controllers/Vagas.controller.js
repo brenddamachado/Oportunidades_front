@@ -1,4 +1,3 @@
-
 let vagas = [
   {
     id: 1,
@@ -21,27 +20,35 @@ export const retornarVagas = () => {
 };
 
 export const inserindoVagas = (tipo, titulo, descricao, link) => {
-  const id = vagas.length + 1; 
+  const id = vagas.length + 1;
   const novaVaga = { id, tipo, titulo, descricao, link };
-  vagas.push(novaVaga); 
+  vagas.push(novaVaga);
   return novaVaga;
 };
 
-export const buscarPorTipo = (tipoVaga) => {
-  return vagas.filter((vaga) => vaga.tipo === tipoVaga); 
+export const buscarPorId = (id) => {
+  return vagas.find(vaga => vaga.id === id);
 };
 
-
-export const buscarPorId = (id) => {
-  return vagas.find((vaga) => vaga.id === id); 
+export const atualizarVaga = (id, titulo, descricao, link) => {
+  const vagaIndex = vagas.findIndex((vaga) => vaga.id === id);
+  if (vagaIndex !== -1) {
+    vagas[vagaIndex] = { ...vagas[vagaIndex], titulo, descricao, link }; 
+    return vagas[vagaIndex];
+  }
+  return null;
 };
 
 
 export const excluirVaga = (id) => {
-  const vagaIndex = vagas.findIndex((vaga) => vaga.id === id); 
-  if (vagaIndex >= 0) {
-    const vagaExcluida = vagas.splice(vagaIndex, 1); 
-    return vagaExcluida[0];
+  const vagaIndex = vagas.findIndex((vaga) => vaga.id === id);
+  if (vagaIndex !== -1) {
+    return vagas.splice(vagaIndex, 1)[0]; 
   }
   return null;
+};
+
+
+export const buscarPorTipo = (tipoVaga) => {
+  return vagas.filter(vaga => vaga.tipo === tipoVaga);
 };

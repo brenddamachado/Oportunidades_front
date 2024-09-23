@@ -1,15 +1,15 @@
 import React from 'react';
-import './searchbar.css';
-function SearchBar({ tipoBusca, setTipoBusca, buscarVagasPorTipo }) {
+
+function SearchBar({ busca, setBusca, buscarVagas }) {
   return (
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Buscar por tipo de vaga"
-        value={tipoBusca}
-        onChange={(e) => setTipoBusca(e.target.value)}
+        placeholder="Buscar por ID ou Tipo"
+        value={busca}
+        onChange={(e) => setBusca(e.target.value)}
       />
-      <button onClick={buscarVagasPorTipo}>Buscar</button>
+      <button onClick={buscarVagas}>Buscar</button>
     </div>
   );
 }
