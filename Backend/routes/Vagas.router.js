@@ -41,7 +41,7 @@ router.put('/vagas/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const { tipo, titulo, descricao, link } = req.body;
 
-  const vagaAtualizada = atualizarVaga(id, tipo, titulo, descricao, link);  // Atualiza o tipo também
+  const vagaAtualizada = atualizarVaga(id, tipo, titulo, descricao, link); 
   if (vagaAtualizada) {
     res.json(vagaAtualizada);
   } else {

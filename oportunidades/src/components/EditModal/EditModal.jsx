@@ -9,7 +9,7 @@ function EditModal({ isOpen, onClose, vaga, onSave }) {
 
   useEffect(() => {
     if (vaga) {
-      setTipo(vaga.tipo);         // Garantindo que o tipo seja carregado
+      setTipo(vaga.tipo);        
       setTitulo(vaga.titulo);
       setDescricao(vaga.descricao);
       setLink(vaga.link);
@@ -17,18 +17,18 @@ function EditModal({ isOpen, onClose, vaga, onSave }) {
   }, [vaga]);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();       // Prevenindo o comportamento padrão do formulário
+    event.preventDefault();       
     try {
-      const updatedVaga = { ...vaga, tipo, titulo, descricao, link };  // Inclui "tipo" na atualização
+      const updatedVaga = { ...vaga, tipo, titulo, descricao, link }; 
       const response = await axios.put(`http://localhost:4000/vagas/${vaga.id}`, updatedVaga);
-      onSave(response.data);       // Atualiza a vaga no estado superior
-      onClose();                   // Fecha o modal após salvar
+      onSave(response.data);       
+      onClose();                  
     } catch (error) {
       console.error("Erro ao salvar a vaga", error);
     }
   };
 
-  if (!isOpen) return null;        // Retorna null se o modal não estiver aberto
+  if (!isOpen) return null;        
 
   return (
     <div className="modal">
@@ -40,8 +40,8 @@ function EditModal({ isOpen, onClose, vaga, onSave }) {
           <input
             type="text"
             name="tipo"
-            value={tipo}                 // Controla o valor de "tipo"
-            onChange={(e) => setTipo(e.target.value)}  // Atualiza o estado de "tipo"
+            value={tipo}               
+            onChange={(e) => setTipo(e.target.value)}  
             required
           />
 
