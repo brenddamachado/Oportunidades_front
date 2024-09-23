@@ -39,14 +39,16 @@ router.get('/vagas/:id', (req, res) => {
 
 router.put('/vagas/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const { titulo, descricao, link } = req.body;
-  const vagaAtualizada = atualizarVaga(id, titulo, descricao, link);
+  const { tipo, titulo, descricao, link } = req.body;
+
+  const vagaAtualizada = atualizarVaga(id, tipo, titulo, descricao, link);  // Atualiza o tipo também
   if (vagaAtualizada) {
     res.json(vagaAtualizada);
   } else {
     res.status(404).json({ error: 'Vaga não encontrada.' });
   }
 });
+
 
 
 router.delete('/vagas/:id', (req, res) => {

@@ -30,15 +30,20 @@ export const buscarPorId = (id) => {
   return vagas.find(vaga => vaga.id === id);
 };
 
-export const atualizarVaga = (id, titulo, descricao, link) => {
+export const atualizarVaga = (id, tipo, titulo, descricao, link) => {
+  console.log("ID recebido para atualização:", id);  // Log para verificar o ID recebido
   const vagaIndex = vagas.findIndex((vaga) => vaga.id === id);
-  if (vagaIndex !== -1) {
-    vagas[vagaIndex] = { ...vagas[vagaIndex], titulo, descricao, link }; 
-    return vagas[vagaIndex];
-  }
-  return null;
-};
 
+  if (vagaIndex !== -1) {
+    // Atualizando todos os campos, incluindo o tipo
+    vagas[vagaIndex] = { ...vagas[vagaIndex], tipo, titulo, descricao, link };
+    console.log("Vaga atualizada:", vagas[vagaIndex]);  // Log para verificar a vaga atualizada
+    return vagas[vagaIndex];
+  } else {
+    console.error("Vaga com ID não encontrada:", id);
+    return null;
+  }
+};
 
 export const excluirVaga = (id) => {
   const vagaIndex = vagas.findIndex((vaga) => vaga.id === id);

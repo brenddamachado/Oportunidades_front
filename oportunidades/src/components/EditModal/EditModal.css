@@ -1,56 +1,65 @@
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .modal label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .modal input, .modal textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .modal button {
-    padding: 10px 15px;
-    margin-right: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .modal button:hover {
-    background-color: #0056b3;
-  }
-  
-  .modal button:last-child {
-    background-color: #dc3545;
-  }
-  
-  .modal button:last-child:hover {
-    background-color: #c82333;
-  }
-  
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form_add {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_add label {
+  margin-bottom: 10px;
+}
+
+.form_add input, .form_add textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form_add button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form_add button:hover {
+  background-color: #0056b3;
+}
+
+.form_add button:last-child {
+  background-color: #dc3545;
+}
+
+.form_add button:last-child:hover {
+  background-color: #c82333;
+}
